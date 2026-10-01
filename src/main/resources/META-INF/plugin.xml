@@ -1,0 +1,20 @@
+<idea-plugin>
+    <id>dev.fumulabo.har</id>
+    <name>HAR Inspector</name>
+    <vendor url="https://fumulabo.com">fumulabo</vendor>
+    <description><![CDATA[
+        Open <b>.har</b> (HTTP Archive) files exported from browser DevTools right inside the IDE.
+        <ul>
+            <li>Request table with method, status, type, size and time</li>
+            <li>Waterfall column showing when each request started and how long it took</li>
+            <li>Filter by URL, method, status or content type</li>
+            <li>Headers, query, request body, response body and timing breakdown for the selected request</li>
+            <li>Copy any request as cURL</li>
+        </ul>
+        Everything runs locally. No data leaves your machine.
+    ]]></description>
+    <depends>com.intellij.modules.platform</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <fileEditorProvider implementation="dev.fumulabo.har.HarEditorProvider"/>
+    </extensions>
+</idea-plugin>
