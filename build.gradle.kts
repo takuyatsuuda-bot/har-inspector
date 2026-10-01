@@ -33,3 +33,9 @@ intellijPlatform {
 }
 
 tasks.test { useJUnitPlatform() }
+
+// runIde で見本フォルダを開き、example.har をそのまま表示する
+tasks.runIde {
+    val demo = layout.projectDirectory.dir("samples/demo").asFile
+    args(demo.absolutePath, demo.resolve("example.har").absolutePath)
+}
